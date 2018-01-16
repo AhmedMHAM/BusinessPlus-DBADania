@@ -1,0 +1,25 @@
+
+
+BACKUP DATABASE Dania TO DISK = 'E:\DaniaDackup.Bak' 
+Go
+/******************************************************************/
+BACKUP DATABASE Dania 
+TO DISK = 'E:\DIFFERENTIALDaniaDackup.Bak' 
+WITH DIFFERENTIAL; 
+Go
+/******************************************************************/
+BACKUP LOG Dania
+TO DISK = 'E:\DaniaDackupLog.Bak' 
+WITH NORECOVERY;
+Go
+/******************************************************************/
+use master
+
+ALTER DATABASE Dania SET RECOVERY FULL;
+GO
+RESTORE DATABASE Dania
+FROM DISK ='E:\DaniaDackup.Bak' 
+WITH FILE=1,
+Replace, 
+RECOVERY; 
+GO
