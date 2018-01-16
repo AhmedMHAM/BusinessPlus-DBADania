@@ -1,0 +1,20 @@
+CREATE LOGIN dania1 WITH PASSWORD = '123' ;
+Create Login dania2 With Password='123';
+/****************************************/
+create user dania1 for login dania1;
+GRANT connect TO dania1; 
+Grant update to dania1;
+Grant delete to dania1
+Grant create table to dania1;
+/****************************************/
+create user dania2 for login dania2;
+Grant SELECT to dania2;
+/****************************************/
+/*EXEC master..sp_addsrvrolemember @loginame = N'dania1', @rolename = N'sysadmin'
+EXEC master..sp_addsrvrolemember @loginame = N'dania2', @rolename = N'sysadmin'*/
+/****************************************/
+/* drop login dania1
+drop login dania2
+drop user dania1
+drop user dania2
+/****************************************/
