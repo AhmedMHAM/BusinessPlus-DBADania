@@ -2,8 +2,15 @@ SELECT * FROM sys.dm_exec_requests;
 
 /********************************************************************/
 Declare @var varbinary(64);
+Declare @var1 varbinary(64);
  
-SELECT @var=sql_handle FROM sys.dm_exec_requests where sql_handle <>'';  
-print @var; 
+SELECT @var=sql_handle FROM sys.dm_exec_requests where sql_handle <>'';
+select @var1=plan_handle FROM sys.dm_exec_requests where plan_handle <>'';  
 
-SELECT * FROM sys.dm_exec_sql_text(@var);
+print @var;
+Print @var1; 
+
+SELECT * FROM sys.dm_exec_sql_text(@var); 
+SELECT * FROM sys.dm_exec_query_plan (@var1); 
+
+ 
