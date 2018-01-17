@@ -13,6 +13,10 @@ ____________________________________
 
 5- Requests executing within SQL Server Script.
 
+6- List All DB in Server Script.
+
+
+
 
 
 
