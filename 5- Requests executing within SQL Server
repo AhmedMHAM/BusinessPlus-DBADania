@@ -1,6 +1,6 @@
 SELECT * FROM sys.dm_exec_requests;
 
-
+/********************************************************************/
 Declare @var varbinary(64);
  
 SELECT @var=sql_handle FROM sys.dm_exec_requests where sql_handle <>'';  
