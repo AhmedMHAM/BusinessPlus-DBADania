@@ -17,7 +17,7 @@ ____________________________________
 
 7- Return IO statistics for data and log files Script.
 
-8- Create Backup Schedule Script.
+8- Create JobSchedule Script.
 
 
 
