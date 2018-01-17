@@ -1,8 +1,12 @@
 USE msdb ;
 GO
+
+/*** step 1: create job  */
 EXEC dbo.sp_add_job
     @job_name = N'JobNightlyBackups' ;
 GO
+
+/*** step 2: create jobstep  */
 EXEC sp_add_jobstep
     @job_name = N'JobNightlyBackups',
     @step_name = N'Set database to read only',
@@ -11,6 +15,7 @@ EXEC sp_add_jobstep
     @retry_attempts = 5,
     @retry_interval = 5 ;
 GO
+/*** step 3: create jobschedule  */
 
 EXEC msdb.dbo.sp_add_jobschedule 
     @job_name = N'JobNightlyBackups', -- Job name
