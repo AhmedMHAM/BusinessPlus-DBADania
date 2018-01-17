@@ -1,11 +1,11 @@
 # BusinessPlus-DBADania
 What is DBADania?
 
-DBADania is SQL Server DBA Scripts:
+DBADania is SQL Server DBA Library for DBA:
 ____________________________________
-1-Security Plan Management Script .
+1- Security Plan Management Script .
 
-2-Schema Script.
+2- Schema Script.
 
 3- Backup and Recovery DB Script.
 
