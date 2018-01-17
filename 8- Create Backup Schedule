@@ -1,0 +1,35 @@
+USE msdb ;
+GO
+EXEC dbo.sp_add_job
+    @job_name = N'JobNightlyBackups' ;
+GO
+EXEC sp_add_jobstep
+    @job_name = N'JobNightlyBackups',
+    @step_name = N'Set database to read only',
+    @subsystem = N'TSQL',
+    @command = N'ALTER DATABASE Dania SET READ_ONLY', 
+    @retry_attempts = 5,
+    @retry_interval = 5 ;
+GO
+
+EXEC msdb.dbo.sp_add_jobschedule 
+    @job_name = N'JobNightlyBackups', -- Job name
+    @name = N'ScheduleNightly',  -- Schedule name
+    @freq_type = 8, -- Weekly
+    @freq_interval = 64, -- Saturday
+    @freq_recurrence_factor = 1, -- every week
+    @active_start_time = 20000 -- 2:00 AM
+  
+Go
+/******************************************************************/
+EXEC sp_delete_job  
+    @job_name = N'JobNightlyBackups' ;  
+GO
+
+EXEC dbo.sp_delete_schedule  
+    @schedule_name='ScheduleNightly';    
+GO
+/*******************************************************/
+EXEC dbo.sp_help_schedule ;
+select * from  msdb..sysjobs 
+GO
