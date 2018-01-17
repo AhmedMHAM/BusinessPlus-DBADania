@@ -19,6 +19,11 @@ ____________________________________
 
 8- Create JobSchedule Script.
 
+9- Alter Database set options Script.
+
+
+
+
 
 
 
