@@ -1,6 +1,14 @@
 
+BEGIN TRY
+
 SELECT * FROM sys.dm_io_virtual_file_stats(DB_ID(N'Dania'),FILE_IDEX('Dania')); 
 SELECT * FROM sys.dm_io_virtual_file_stats(DB_ID(N'Dania'), FILE_IDEX('Dania_log'));  
 
+END TRY
 
+BEGIN CATCH
 
+SELECT ERROR_NUMBER() as error_number ,
+       ERROR_MESSAGE() as error_message;
+       
+END CATCH
