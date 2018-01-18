@@ -1,3 +1,6 @@
 
 SELECT * FROM sys.dm_io_virtual_file_stats(DB_ID(N'Dania'),FILE_IDEX('Dania')); 
 SELECT * FROM sys.dm_io_virtual_file_stats(DB_ID(N'Dania'), FILE_IDEX('Dania_log'));  
+
+
+
