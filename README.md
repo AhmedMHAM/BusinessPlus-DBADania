@@ -23,6 +23,10 @@ ____________________________________
 
 10- DBCC Script.
 
+11- Create logical device for backup Script.
+
+
+
 
 
 
