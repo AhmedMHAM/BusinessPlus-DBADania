@@ -1,0 +1,6 @@
+
+CREATE DATABASE Dania_Snapshot_1 ON  
+( NAME = Dania_Data, FILENAME =  
+'E:\Dania_Data_Snapshot_1.ss')  
+AS SNAPSHOT OF Dania;  
+GO  
