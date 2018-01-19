@@ -25,6 +25,11 @@ ____________________________________
 
 11- Create logical device for backup Script.
 
+12- DB Snapshot Script.
+
+13- Indexes Management Script.
+
+
 
 
 
