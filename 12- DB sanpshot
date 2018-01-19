@@ -1,6 +1,20 @@
+use Dania
 
 CREATE DATABASE Dania_Snapshot_1 ON  
 ( NAME = Dania_Data, FILENAME =  
 'E:\Dania_Data_Snapshot_1.ss')  
 AS SNAPSHOT OF Dania;  
 GO  
+
+/***************************************/
+DROP DATABASE Dania_Snapshot_1
+
+/***************************************/
+
+USE master;
+
+RESTORE DATABASE Dania from 
+DATABASE_SNAPSHOT = 'Dania_Snapshot_1';
+GO
+/**********************************************/
+
