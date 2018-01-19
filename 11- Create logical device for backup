@@ -1,1 +1,8 @@
 
+USE Dania ;  
+GO  
+EXEC sp_addumpdevice 'disk', 'Dania_Device', 'E:\Full_Dania.Bak ' ;  
+GO
+BACKUP DATABASE Dania To Dania_Device
+ WITH FORMAT;  
+Go
